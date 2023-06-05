@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Responsive Sidebar Menu</title>
+
+    <!-- BoxIcons icons-->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <div class="toggle">
+            <i class="bx bx-chevron-right"></i>
+        </div>
+
+        <div class="logo">
+            <img src="images/logo.jpg" alt="...">
+            <h3>Alt Coding</h3>
+        </div>
+
+        <nav>
+
+           
+            <ul>
+                <li class="nav-item active">
+                    <i class="bx bxs-dashboard"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav-item">
+                    <i class="bx bxs-bar-chart-alt-2"></i>
+                    <span>Analytics</span>
+                </li>
+                <li class="nav-item">
+                    <i class="bx bx-chat"></i>
+                    <span>Message</span>
+                </li>
+                <li class="nav-item">
+                    <i class="bx bxs-bell"></i>
+                    <span>Notifications</span>
+                </li>
+                <li class="nav-item">
+                    <i class="bx bxs-cog"></i>
+                    <span>Settings</span>
+                </li>
+            </ul>
+
+            
+
+        </nav>
+
+    </div>
+
+    <!-- JS File -->
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+const navItems = document.querySelectorAll('nav .nav-item');
+const toggle = document.querySelector('.sidebar .toggle');
+
+toggle.addEventListener('click', () => {
+
+    if (sidebar.className === 'sidebar')
+        sidebar.classList.add('open');
+    else
+        sidebar.classList.remove('open');
+
+});
+
+navItems.forEach(navItem => {
+
+    navItem.addEventListener('click', () => {
+
+        navItems.forEach(navItem => {
+            navItem.classList.remove('active');
+        });
+
+        navItem.classList.add('active');
+
+    });
+
+});
+
+    </script>
+
+</body>
+
+</html>
